@@ -1,0 +1,136 @@
+:root {
+    --notepad-color: rgb(28, 28, 28);
+    --background-color: rgb(9, 9, 9);
+    --icon-color: rgb(75, 75, 75);
+    --text-color: rgb(255, 255, 255);
+    --header-color: rgb(41, 41, 41);
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.lightMode {
+    --notepad-color: #DEDEDE;
+    --background-color: rgb(250, 249, 246);
+    --text-color: black;
+}
+
+.lightMode #theme svg:first-child {
+    display: none;
+}
+
+.lightMode #theme svg:last-child {
+    display: block;
+}
+
+#theme {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--icon-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+}
+
+#theme:active {
+    transform: scale(0.9);
+    transition: 0.1s ease-in-out;
+}
+
+#theme svg:last-child {
+    display: none;
+}
+
+.add {
+    all: unset;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: fixed
+}
+
+.add:active {
+    transform: scale(0.9);
+    transition: 0.1s ease-in-out;
+}
+
+.Plusbutton {
+    width: 50px;
+    height: 50px;
+}
+
+.Plusbutton::before,
+.Plusbutton::after {
+    content: "";
+    position: absolute;
+    background-color: rgb(59, 59, 59);
+}
+
+.Plusbutton::before {
+    width: 10px;
+    height: 50px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Plusbutton::after {
+    width: 50px;
+    height: 10px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.addNewNote {
+    background-color: var(--notepad-color);
+    width: 100%;
+    height: 15rem;
+    min-height: 10rem;
+    min-width: 10rem;
+    max-width: 26rem;
+    max-height: 26rem;
+    overflow: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    position: absolute;
+    /* resize: both; */
+}
+
+.addNewNote:first-child {
+    display: none;
+}
+
+.newtext {
+    background: transparent;
+    outline: none;
+    border: none;
+    resize: none;
+    width: 100%;
+    height: 80%;
+    font-family: sans-serif;
+    font-size: large;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 4%;
+}
+
+.main-container {
+    margin-bottom: 20px;
+}
+
+.noteHeader {
+    height: 30px;
+    background-color: var(--header-color);
+}
