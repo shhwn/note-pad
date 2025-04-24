@@ -11,8 +11,8 @@ body {
 }
 
 .lightMode {
-    --notepad-color: #DEDEDE;
-    --background-color: rgb(250, 249, 246);
+    --notepad-color: #eeeeee;
+    --background-color: rgb(255, 255, 255);
     --text-color: black;
 }
 
@@ -39,12 +39,52 @@ body {
     right: 20px;
 }
 
+.Plusbutton {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--icon-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 100px;
+    right: 20px;
+}
+
+#saveNote {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--icon-color);
+}
+
+#saveNote:active {
+    transform: scale(0.9);
+    transition: 0.1s ease-in-out;
+}
+
+#saveNote:hover {
+    cursor: pointer;
+}
+
 #theme:active {
     transform: scale(0.9);
     transition: 0.1s ease-in-out;
 }
 
+#theme:hover {
+    cursor: pointer;
+}
+
 #theme svg:last-child {
+    display: none;
+}
+
+.savenoteButton:first-child {
     display: none;
 }
 
@@ -57,40 +97,12 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    position: fixed
+    position: fixed;
 }
 
 .add:active {
     transform: scale(0.9);
     transition: 0.1s ease-in-out;
-}
-
-.Plusbutton {
-    width: 50px;
-    height: 50px;
-}
-
-.Plusbutton::before,
-.Plusbutton::after {
-    content: "";
-    position: absolute;
-    background-color: rgb(59, 59, 59);
-}
-
-.Plusbutton::before {
-    width: 10px;
-    height: 50px;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.Plusbutton::after {
-    width: 50px;
-    height: 10px;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
 }
 
 .addNewNote {
@@ -133,4 +145,17 @@ body {
 .noteHeader {
     height: 30px;
     background-color: var(--header-color);
+}
+
+.trash {
+    border: none;
+    padding: none;
+    margin-top: 2px;
+    background: transparent;
+    transition: ease-in-out
+}
+
+.trash:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }

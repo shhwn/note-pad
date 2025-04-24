@@ -27,8 +27,33 @@ document.querySelector(".add").addEventListener("click", () => {
         document.querySelectorAll('.addNewNote').forEach(el => {
             el.style.zIndex = "auto"
         })
+    } 
+});
+
+document.querySelector(".add").addEventListener("click", () => {
+    const checkMark = document.querySelector(".savenoteButton");
+    const clone2 = checkMark.cloneNode(true);
+    clone2.style.position = "fixed";
+    document.body.appendChild(clone2);
+        document.querySelectorAll('.savenoteButton').forEach(el => {
+        el.addEventListener('click', () => {
+            resetIndex();
+            el.style.zIndex = "1"
+        })
+    })
+});
+// end of button scope
+
+// delete button:
+document.addEventListener("click", function (deleteMe) {
+    if (deleteMe.target.closest("#deleteButton")) {
+        const note = deleteMe.target.closest(".addNewNote");
+        if (note) {
+            note.remove();
+        }
     }
 });
+// end of delete button
 
 // making the notes dragable scope:
 function makeDraggable(note) {
@@ -51,6 +76,7 @@ function makeDraggable(note) {
 }
 
 makeDraggable(document.querySelector(".addNewNote"));
+// end of dragable scope
 
 // dark mode feature:
 let lightMode = localStorage.getItem('lightMode');
@@ -74,3 +100,4 @@ Theme.addEventListener("click", () => {
     lightMode = localStorage.getItem('lightMode');
     lightMode !== "active" ? enableLightMode() : disableLightMode();
 });
+// end of them switch scope
